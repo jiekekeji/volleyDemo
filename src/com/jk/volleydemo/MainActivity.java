@@ -30,9 +30,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		// getData1();
+		getData1();
 
-		// getData2();
+		getData2();
 
 		getData3();
 	}
@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
 		requestQueue.add(stringRequest);
 	}
 
+	/** 以json串的方式提交请求获取jsonObject **/
 	private void getData2() {
 		RequestQueue requestQueue = Volley
 				.newRequestQueue(getApplicationContext());
@@ -110,6 +111,7 @@ public class MainActivity extends Activity {
 		requestQueue.add(jsonRequest);
 	}
 
+	/** 以參數的方式提交請求获取jsonobejct **/
 	private void getData3() {
 		RequestQueue requestQueue = Volley
 				.newRequestQueue(getApplicationContext());
@@ -117,6 +119,7 @@ public class MainActivity extends Activity {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("account", "luzong");
 
+		// 自定义的request
 		Request<JSONObject> request = new NormalPostRequest(HOST
 				+ REQ_URL.VISIT_CARD_EDIT_REQUEST,
 				new Response.Listener<JSONObject>() {
