@@ -1,4 +1,4 @@
-package com.jk.volleydemo;
+package com.jk.my.volley;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -19,11 +19,11 @@ import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.HttpHeaderParser;
 
 /** .客户端以参数的post方式进行提交,服务端返回json串 **/
-public class NormalPostRequest extends Request<JSONObject> {
+public class PostRequestJson extends Request<JSONObject> {
 	private Map<String, String> mMap;
 	private Listener<JSONObject> mListener;
 
-	public NormalPostRequest(String url, Listener<JSONObject> listener,
+	public PostRequestJson(String url, Listener<JSONObject> listener,
 			ErrorListener errorListener, Map<String, String> map) {
 		super(Request.Method.POST, url, errorListener);
 
